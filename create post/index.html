@@ -32,15 +32,33 @@
 <body>
     <header class="page-header">
         <img class="logo" src="/assets/html_css_js.png" alt="logo">
-        <p class="title">Supabase Web App</p>
+        <p class="title">Create A Post!!</p>
         <nav>
-            <a href="/">Home</a>
+            <a href="/">Bulletin</a>
             <a id="sign-out-link" href="auth">Sign Out</a>
-            <a href="/create post/index.html">Create Post</a>
         </nav>
     </header>
 
     <main>
+        <form id="make-post"></form>
+            <label>
+                <div>Category</div>
+                <select id="category-id" name="category_name" required></select>
+            </label>
+            <label>
+                <div>Title</div>
+                <input name="title" required placeholder="what's postin?">
+            </label>
+            <label>
+                <div>Description</div>
+                <textarea name="description" required placeholder="more...more!?"></textarea>
+            </label>
+            <label>
+                <div>Contact</div>
+                <input name="contact" placeholder="contact info">
+            </label>
+            <button>Add Post</button>
+        </form>
 
     </main>
 
