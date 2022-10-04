@@ -8,12 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <!-- title and favicon -->
-    <title>Supabase Web App</title>
+    <title>Bulletin</title>
     <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
 
     <!-- js -->
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <script type="module" src="app.js"></script>
+    <script type="module" src="createpost.js"></script>
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,6 +24,7 @@
 
     <!-- css -->
     <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/form.css" />
     <link rel="stylesheet" href="/styles/global.css" />
     <!-- add link for page specific css -->
 
@@ -34,30 +35,51 @@
         <img class="logo" src="/assets/html_css_js.png" alt="logo">
         <p class="title">Create A Post!!</p>
         <nav>
-            <a href="/">Bulletin</a>
-            <a id="sign-out-link" href="auth">Sign Out</a>
+            <a href="../">Bulletin</a>
+            <a id="sign-out-link" href="../auth">Sign Out</a>
         </nav>
     </header>
 
     <main>
-        <form id="make-post"></form>
+        <form id="make-post">
             <label>
                 <div>Category</div>
-                <select id="category-id" name="category_name" required></select>
+                <select id="category-id" name="category" required>
+                    <option disabled selected value>feeling...</option>
+                    <option value="1">😖</option>
+                    <option value="2">🙃</option>
+                    <option value="3">🥵</option>
+                    <option value="4">🥶</option>
+                    <option value="5">🤯</option>
+                    <option value="6">🤡</option>
+                </select>
             </label>
+
             <label>
                 <div>Title</div>
                 <input name="title" required placeholder="what's postin?">
             </label>
+
             <label>
                 <div>Description</div>
                 <textarea name="description" required placeholder="more...more!?"></textarea>
             </label>
+
             <label>
                 <div>Contact</div>
                 <input name="contact" placeholder="contact info">
             </label>
+
+            <label>
+                <div>Photo</div>
+                <input id="image-input" name="image" type="file" required placeholder="upload an image...">
+            </label>
+            <img id="preview" class="preview" alt="avatar preview" src="../assets/placeholder.jpg">
+            
             <button>Add Post</button>
+            
+            <p id="error-display"></p>
+
         </form>
 
     </main>
