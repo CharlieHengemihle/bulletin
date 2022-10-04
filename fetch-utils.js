@@ -36,9 +36,9 @@ export async function getPosts() {
     return await client.from('bulletin').select('*').oreder('created_at');
 }
 
-export async function uploadImage(bucketName, imagePath, imageFile) {
+export async function uploadImage( bucket1, imagePath, imageFile ) {
 
-    const bucket = client.storage.from(bucketName);
+    const bucket = client.storage.from(bucket1);
 
     const response = await bucket.upload(imagePath, imageFile, {
         cacheControl: '3600',

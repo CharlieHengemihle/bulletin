@@ -1,0 +1,50 @@
+#bulletin {
+    height: 100%;
+    background-image: url(../assets/bulletin_board.jpeg);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    padding: 10px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    gap: 10px;
+
+    overflow-y: scroll;
+}
+
+.posty {
+    height: 270px;
+    width: 270px;
+    padding: 10px;
+    background: rgb(205, 205, 190);
+    display: grid;
+    grid-template-columns: auto, 1fr, auto;
+    position: relative;
+    ;
+}
+
+.image {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+}
+
+.image:hover {
+    height: 300px;
+    width: 300px;
+    object-fit: contain;
+}
+
+.posty p {
+    overflow-y: auto;
+    
+}
+
+.posty .category {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    font-size: 1.5em;
+}

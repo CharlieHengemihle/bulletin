@@ -26,14 +26,14 @@ postForm.addEventListener('submit', async (e) => {
     const imageFile = formData.get('image');
     const randomFolder = Math.floor(Date.now() * Math.random());
     const imagePath = `bulletin/${randomFolder}/${imageFile.name}`;
-    const url = await uploadImage('images', imagePath, imageFile);
+    const url = await uploadImage('bucket1', imagePath, imageFile);
 
     const post = {
         category: formData.get('category'),
         title: formData.get('title'),
         description: formData.get('description'),
         contact: formData.get('contact'),
-        image_url: url,
+        image_url:url,
     };
 
     const response = await createPost(post);
