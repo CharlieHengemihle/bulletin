@@ -33,7 +33,7 @@ postForm.addEventListener('submit', async (e) => {
         title: formData.get('title'),
         description: formData.get('description'),
         contact: formData.get('contact'),
-        image_url:url,
+        image_url: url,
     };
 
     const response = await createPost(post);

@@ -33,12 +33,12 @@ export async function createPost(post) {
 }
 
 export async function getPosts() {
-    return await client.from('bulletin').select('*').oreder('created_at');
+    return await client.from('bulletin').select('*').order('created_at');
 }
 
-export async function uploadImage( bucket1, imagePath, imageFile ) {
+export async function uploadImage(bucketName, imagePath, imageFile) {
 
-    const bucket = client.storage.from(bucket1);
+    const bucket = client.storage.from(bucketName);
 
     const response = await bucket.upload(imagePath, imageFile, {
         cacheControl: '3600',
@@ -46,10 +46,10 @@ export async function uploadImage( bucket1, imagePath, imageFile ) {
     });
 
     if (response.error) {
+        // console.log(response.error);
         return null;
     }
 
     const url = `${SUPABASE_URL}/storage/v1/object/public/${response.data.Key}`;
-
     return url;
 }
