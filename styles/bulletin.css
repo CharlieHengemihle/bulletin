@@ -1,7 +1,7 @@
 #bulletin {
     height: 100%;
     background-image: url(../assets/bulletin_board.jpeg);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.16), 3px 3px 6px rgba(0, 0, 0, 0.23);
     padding: 10px;
 
     display: flex;
@@ -10,39 +10,37 @@
     justify-content: center;
     align-content: flex-start;
     gap: 10px;
-
     overflow-y: scroll;
 }
 
-.posty {
-    height: 270px;
-    width: 270px;
+.post-it {
+    height: 350;
+    width: 350px;
     padding: 10px;
     background: rgb(205, 205, 190);
     display: grid;
-    grid-template-columns: auto, 1fr, auto;
+    grid-template-columns: auto;
     position: relative;
-    ;
 }
 
-.image {
-    height: 50px;
-    width: 50px;
+img {
+    max-height: 100px;
+    max-width: 100px;
     object-fit: contain;
 }
 
-.image:hover {
-    height: 300px;
-    width: 300px;
+img:hover {
+    max-height: 450px;
+    max-width: 450px;
     object-fit: contain;
 }
 
-.posty p {
+.post-it p {
     overflow-y: auto;
     
 }
 
-.posty .category {
+.post-it .category {
     position: absolute;
     top: 4px;
     right: 4px;

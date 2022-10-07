@@ -1,23 +1,6 @@
-export function renderPosts(posts) {
-    const fragment = document.createDocumentFragment();
 
-    for (const post of posts) {
-        const li = document.createElement('li');
-        li.classList.add('posty');
 
-        const titleEl = document.createElement('h2');
-        titleEl.textContent = post.title;
-
-        const categoryEl = document.createElement('span');
-        categoryEl.classList.add('category');
-
-    }
-}
-
-export function renderPosts(posts) {
-    const fragment = document.createDocumentFragment();
-
-    for (const post of posts) {
+export function renderPosts(post) {
         const li = document.createElement('li');
         li.classList.add('post-it');
 
@@ -26,20 +9,20 @@ export function renderPosts(posts) {
 
         const categoryEl = document.createElement('span');
         categoryEl.classList.add('category');
-        categoryEl.title = post.category.name;
-        categoryEl.textContent = post.category.emoji;
+        categoryEl.textContent = post.category;
 
         const descriptionEl = document.createElement('p');
         descriptionEl.classList.add('description');
         descriptionEl.textContent = post.description;
 
+        const imageEl = document.createElement('img');
+        imageEl.src = post.image_url;
+
         const contactEl = document.createElement('p');
         contactEl.textContent = post.contact;
 
-        li.append(titleEl, categoryEl, descriptionEl, contactEl);
+        li.append(titleEl, categoryEl, descriptionEl, imageEl, contactEl);
 
-        fragment.append(li);
-    }
-
-    return fragment;
+    return li;
 }
+
