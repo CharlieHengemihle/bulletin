@@ -44,7 +44,7 @@ postForm.addEventListener('submit', async (e) => {
     } else {
         location.assign('../');
     }
-})
+});
 
 function displayError() {
     errorDisplay.textContent = error.message;
